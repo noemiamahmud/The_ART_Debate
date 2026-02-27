@@ -1,0 +1,47 @@
+Debater Report 
+Noemia Mahmud
+CS 398 Applied LLMs
+Week 4
+
+Topic: AI-generated art should be considered authentic creative expression
+Personas Created: Dr. Greyson Sullivan, computational creativity researcher and digital artist (Affirmative) 
+vs. Dr. Coenraad Jehudijah, classically trained painter and art historian (Negative)
+Model: llama.cpp Phi-3-mini-4k-instruct 
+
+
+Overview:
+For this project, I implemented a multi-agent debate system where two LLM instances argued opposite sides of a Lincoln–Douglas debate topic.
+Both agents used the same base model (local llama.cpp), but each had a different persona and system prompt. The affirmative agent (Dr. Greyson Sullivan)
+argued that AI-generated art is authentic creative expression, while the negative agent (Dr. Coenraad Jehudijah) argued that it is not.
+Each agent maintained its own conversation history, and outputs were routed between them so that one agent’s response became the other agent’s input. The debate
+followed the required five-turn Lincoln–Douglas structure: affirmative constructive, negative cross-examination and constructive, affirmative cross-examination 
+and rebuttal, negative rebuttal, and affirmative final rebuttal.
+
+I chose the topic of AI Art in question due to it's recent relevance in many of my social cirlces, as well as my parents discovering SORA AI videos. I find both sides 
+of the argument to be particularly interesting on the extreme ends, so I figured it would be an interesting topic to do the lincoln-douglas style debate for. 
+
+LLMs Succeeding:
+Both agents did very well staying in their respective characters, and they maintained their assigned positions throughout the debate. The personas clearly influenced 
+argument style and vocabulary. I was able to help improve on this part by adding to the persona documents to give them some more character which seemed to help a considerable
+amount. For instance, the affirmative agent consistently used language related to computational creativity and collaboration, and the negative agent emphasized art philosophy
+concepts like embodiment and lived experience. 
+The agents also responded directly to each other’s claims rather than generating unrelated arguments. For example, when the affirmative argued that programmer intentionality
+counts as artistic authorship, the negative directly countered by distinguishing tool use from autonomous generation and emphasizing lived experience. This solidified that 
+the cross-routing was working properly as well. Neither agent switched sides or conceded the core claim which was another great thing to see. 
+
+LLMs Struggling 
+I did notice when runnign the debate that some of the argumentative points were repeated multiple times in different turns, which was not ideal. Even though this was great to see for 
+debate consistency, it made the debate lack a level of depth that I wnated to see more of, even after adding more details for each persona. I also noticed this lack of depth in the 
+conversation topics, which stayed pretty general across turns. Not many detailed claims where made, but this at least kept the converation on topic. 
+
+Bias 
+The debate showed clear philosophical bias patterns that seemed to come directly from the personas and prompts. The affirmative agent framed creativity as something that evolves with
+technology, emphasizing collaboration between humans and AI, while the negative agent treated art as fundamentally tied to human lived experience and intentionality. There was also a 
+difference in what each side treated as evidence: the affirmative focused on emotional impact and audience perception, while the negative prioritized creator intention and embodiment. 
+I do wonder if adding in more citations to choose from would help with this. The detail in the personas was also evident and interesting to see, as they stayed very true to their given 
+characters. 
+
+Overall, both agents followed their constraints well in this run: they stayed on topic, respected the turn structure, and did not agree with the opponent. Earlier tests had issues with 
+the affirmative generating extra turns, but adding stricter turn instructions and sanitization fixed that. This project showed that when you give each agent its own conversation history, 
+you can get a pretty structured and consistent debate. The personas clearly influenced how each side argued and what kinds of points they focused on, but the debate still had some limits 
+in terms of how new or specific the arguments got over time.
